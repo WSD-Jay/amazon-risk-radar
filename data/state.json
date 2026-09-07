@@ -3,6 +3,7 @@
     "https://sellercentral.amazon.com/seller-forums/discussions/t/8b008a40-4b97-4b21-9cc6-85b7fe06e7dc",
     "https://sellercentral.amazon.com/seller-forums/discussions/t/1993b9e7-890d-4de6-b7f4-75c2ba845cfd",
     "https://sellercentral.amazon.com/seller-forums/discussions/t/deaf2056-f6ee-4573-92aa-6e70c16b9598",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/53f6ec7d-49a5-43f6-8e7d-c3ae5a7c0830",
     "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/august/media-credentialing-opens-g20-trade-ministerial-milwaukee-wisconsin",
     "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/august/road-iowa-america-first-trade-raising-wages-reshoring-jobs-and-restoring-americas-global",
     "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/american-steelworkers-manufacturers-and-farmers-praise-president-trumps-tariff-action-combat-forced",
@@ -74,12 +75,12 @@
     "federal-register",
     "eu-taxud"
   ],
-  "lastRun": "2026-09-07T02:23:04.848Z",
+  "lastRun": "2026-09-07T03:14:12.641Z",
   "sourceStatus": [
     {
       "id": "amazon",
       "ok": true,
-      "count": 3,
+      "count": 4,
       "error": null
     },
     {
