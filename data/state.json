@@ -19,6 +19,16 @@
     "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/public-hearings-proposed-responsive-action-section-301-investigations-relating-failures-take-action",
     "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/public-hearing-proposed-responsive-action-section-301-investigation-certain-acts-policies-and",
     "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/june/united-states-and-uzbekistan-announce-early-harvest-trade-accelerate-agreement-reciprocal-trade-and",
+    "https://taxation-customs.ec.europa.eu/news/eu-vat-rules-e-commerce-five-years-more-eur125-billion-vat-revenue-2026-09-03_en",
+    "https://taxation-customs.ec.europa.eu/news/new-training-paths-available-taxation-and-customs-officers-candidate-and-potential-candidate-2026-08-27_en",
+    "https://taxation-customs.ec.europa.eu/news/eucdm-701-here-whats-new-updated-european-customs-data-model-2026-08-27_en",
+    "https://taxation-customs.ec.europa.eu/news/european-commission-publishes-guidance-cbam-verifiers-and-accreditation-bodies-2026-08-24_en",
+    "https://taxation-customs.ec.europa.eu/news/european-commission-publishes-series-guidance-documents-support-cbam-implementation-definitive-2026-08-14_en",
+    "https://taxation-customs.ec.europa.eu/news/cbam-webinar-follow-become-cbam-verifier-all-about-accreditation-and-verification-2026-07-31_en",
+    "https://taxation-customs.ec.europa.eu/news/report-highlights-need-stronger-customs-controls-and-cooperation-protect-eu-citizens-and-businesses-2026-07-20_en",
+    "https://taxation-customs.ec.europa.eu/news/eu-and-turkiye-new-agreement-strengthen-customs-cooperation-2026-07-16_en",
+    "https://taxation-customs.ec.europa.eu/news/european-commissions-annual-tax-report-art-provides-latest-insights-revenue-mix-2026-07-10_en",
+    "https://taxation-customs.ec.europa.eu/news/9th-seminar-european-customs-chemists-2026-07-09_en",
     "http://shenzhen.customs.gov.cn/shenzhen_customs/2026-08/27/article_2026082803080239907.html",
     "http://shenzhen.customs.gov.cn/shenzhen_customs/2026-08/13/article_2026081403151275814.html",
     "http://shenzhen.customs.gov.cn/shenzhen_customs/2026-08/13/article_2026081403151297375.html",
@@ -53,17 +63,7 @@
     "https://www.federalregister.gov/documents/2026/07/16/2026-14306/accreditation-and-approval-of-camin-cargo-control-inc-garden-city-ga-as-a-commercial-gauger-and",
     "https://www.federalregister.gov/documents/2026/07/13/2026-14012/commercial-customs-operations-advisory-committee",
     "https://www.federalregister.gov/documents/2026/07/08/2026-13771/agency-information-collection-activities-extension-court-ordered-refunds-under-the-international",
-    "https://www.federalregister.gov/documents/2026/07/06/2026-13578/accreditation-and-approval-of-nmk-resources-inc-thorofare-nj-as-a-commercial-gauger-and-laboratory",
-    "https://taxation-customs.ec.europa.eu/news/eu-vat-rules-e-commerce-five-years-more-eur125-billion-vat-revenue-2026-09-03_en",
-    "https://taxation-customs.ec.europa.eu/news/new-training-paths-available-taxation-and-customs-officers-candidate-and-potential-candidate-2026-08-27_en",
-    "https://taxation-customs.ec.europa.eu/news/eucdm-701-here-whats-new-updated-european-customs-data-model-2026-08-27_en",
-    "https://taxation-customs.ec.europa.eu/news/european-commission-publishes-guidance-cbam-verifiers-and-accreditation-bodies-2026-08-24_en",
-    "https://taxation-customs.ec.europa.eu/news/european-commission-publishes-series-guidance-documents-support-cbam-implementation-definitive-2026-08-14_en",
-    "https://taxation-customs.ec.europa.eu/news/cbam-webinar-follow-become-cbam-verifier-all-about-accreditation-and-verification-2026-07-31_en",
-    "https://taxation-customs.ec.europa.eu/news/report-highlights-need-stronger-customs-controls-and-cooperation-protect-eu-citizens-and-businesses-2026-07-20_en",
-    "https://taxation-customs.ec.europa.eu/news/eu-and-turkiye-new-agreement-strengthen-customs-cooperation-2026-07-16_en",
-    "https://taxation-customs.ec.europa.eu/news/european-commissions-annual-tax-report-art-provides-latest-insights-revenue-mix-2026-07-10_en",
-    "https://taxation-customs.ec.europa.eu/news/9th-seminar-european-customs-chemists-2026-07-09_en"
+    "https://www.federalregister.gov/documents/2026/07/06/2026-13578/accreditation-and-approval-of-nmk-resources-inc-thorofare-nj-as-a-commercial-gauger-and-laboratory"
   ],
   "initializedSources": [
     "amazon",
@@ -71,9 +71,10 @@
     "cbp",
     "shenzhen",
     "maersk",
-    "federal-register"
+    "federal-register",
+    "eu-taxud"
   ],
-  "lastRun": "2026-09-07T02:22:04.476Z",
+  "lastRun": "2026-09-07T02:23:04.848Z",
   "sourceStatus": [
     {
       "id": "amazon",
@@ -95,9 +96,9 @@
     },
     {
       "id": "eu-taxud",
-      "ok": false,
-      "count": 0,
-      "error": "fetch failed"
+      "ok": true,
+      "count": 10,
+      "error": null
     },
     {
       "id": "shenzhen",
