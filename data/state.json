@@ -161,7 +161,7 @@
     "https://news.google.com/rss/articles/CBMia0FVX3lxTE9yZENaRDY4azVUZkJrY2lTV3VIR00yVG9adjlRdnNINVFNdEhoMjdxa0Y4SjFfc2h0RmtMNXJkQ01oY1RvT3ltRHdRVTNEZG5VSlgtT2NOMjNDWV9PLTNmdkhMLUYyN2hfNEhF?oc=5",
     "https://news.google.com/rss/articles/CBMidkFVX3lxTE5xUkJwcEc4MkxlamsyWi1fTlRrQmlBSHU2eWVrYml1eWJUZWhUOUY1RmpkNDlfdlBfNEQ0aFhuUnVNdXU0SXpvRGxETWV6WWZTTU5HcUxSRzFyMzRGZ0hDTjNjQjJOZjNYSTVLQjRveFRQVVNBZXc?oc=5",
     "https://news.google.com/rss/articles/CBMizANBVV95cUxQWGlpS0x3UHBtRkRKd3NDTEdldklBengycFdKYTVWN1FWY1VXTWpvUTd2eUU5STJoOEVfd2ZaQ1R3RkktTlRMX0VEOVVzVFJZSVhrVkNMOE16UEM5S2JrQlNpMExiald2UFB2OWxOeTlpSUtOekVjTnVFcTU5WGd5OW14SmcxRXVOVWlEWUtqV3Y1MTBLd2NkekdiQ1F3RlZBa0dpSDVNU3lQb0NldUNzT0VOUGVuZzJqVEl5dVpNWEFUR2JlMXhYZ3ZGdXRoQjZzZ3hsRUhYOXJxeHkxSDdsZmkxdnEzR3VfdHRDV3kzdWpHejR0SHJGTDl3STJtUzYxa1dtaVJqVkMtbzFtV2NlbzY0MmV5Ql9BZ2tSMWtHbDRVOXNyM041N0VOTDhHTWNwX2RHQVluRTR2X291Tnc5V1JzdHYzZ2xLZXJVVmx0OVFGd3VwcTBYRFYtUGdOTGxSMUptU0JNU0FVaFZfellDWV80OEhpbHdiaHlMNWVERDJZX2dKRTdFZHprSE5CTC1hWHlfUUZhUmw2SjFweDRDaWJOa2dqRi1ISEczQWN3OGpfRnVFZm9TUXg4SDVNcy1rYVB0eV9BRUluTjlh?oc=5",
-    "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5HcUpGY0dBbnJIN29yYVFOT1hNVENvVWp4Yzh1ZlhXYU5rVHhZVEhIRzFpWGVZX2ZiNGtFZzN2TVM5dXVVYUZ1aHVadUlkcUYyMXVrLTFFNFBhSmxjN0RPNkln?oc=5",
+    "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBnTzVfZm8yamxZWWRJYllCZFlEMDdBWXI2TTJ4d21sS2VYYlpfTGh4YXJyRXZJYzhXNnBULU5KOFZpMDlTY1phUUZaeHlKQQ?oc=5",
     "https://www.federalregister.gov/documents/2026/09/03/2026-18094/commercial-customs-operations-advisory-committee",
     "https://www.federalregister.gov/documents/2026/09/02/2026-17926/heightened-import-disclosures-for-supply-chain-visibility",
     "https://www.federalregister.gov/documents/2026/08/26/2026-17390/automated-commercial-environment-ace-electronic-export-manifest-for-rail-cargo",
@@ -247,6 +247,7 @@
     "https://www.federalregister.gov/documents/2026/08/18/2026-16789/certain-off-road-vehicles-and-components-thereof-notice-of-a-commission-determination-not-to-review",
     "https://www.federalregister.gov/documents/2026/08/18/2026-16788/certain-video-capable-electronic-devices-notice-of-a-commission-determination-not-to-review-an",
     "https://en.sse.net.cn/indices/scfinew.jsp#2026-09-04",
+    "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5HcUpGY0dBbnJIN29yYVFOT1hNVENvVWp4Yzh1ZlhXYU5rVHhZVEhIRzFpWGVZX2ZiNGtFZzN2TVM5dXVVYUZ1aHVadUlkcUYyMXVrLTFFNFBhSmxjN0RPNkln?oc=5",
     "https://sellercentral.amazon.com/seller-forums/discussions/t/53f6ec7d-49a5-43f6-8e7d-c3ae5a7c0830",
     "https://www.maersk.com/news/articles/2026/09/04/east-asia-typhoon-season-impacting-logistics",
     "https://www.maersk.com/news/articles/2026/07/29/pakistan-mandatory-consignee-identification-imports",
@@ -275,7 +276,7 @@
     "discovery-logistics",
     "federal-register-ustr"
   ],
-  "lastRun": "2026-09-08T02:23:42.401Z",
+  "lastRun": "2026-09-08T02:34:23.534Z",
   "sourceStatus": [
     {
       "id": "amazon",
