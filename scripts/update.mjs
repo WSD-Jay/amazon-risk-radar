@@ -22,9 +22,9 @@ const sources = [
     relevant: /seller central|policy|listing|title|fba|fbm|fee|advert|\bai\b|delivery|account|mandatory|navigation/i,
   },
   {
-    id: 'amazon-ads', name: 'Amazon Ads 功能更新', category: 'amazon', evidence: '亚马逊官方', format: 'sitemap', timeout: 60000,
-    url: 'https://advertising.amazon.com/sitemap8.xml', headers: { 'accept-encoding': 'identity' },
-    path: /advertising\.amazon\.com\/resources\/whats-new\//i,
+    id: 'amazon-ads', name: 'Amazon Ads 功能更新', category: 'amazon', evidence: '亚马逊官方',
+    url: 'https://r.jina.ai/https://advertising.amazon.com/resources/whats-new',
+    path: /advertising\.amazon\.com\/(?:en-us\/)?resources\/whats-new\//i,
     relevant: /sponsored|store|amazon business|cross-border|creative|generative|\bai\b|advert|campaign|brand|product|targeting|audience/i,
   },
   {
@@ -129,6 +129,21 @@ const scfi = {
   publicUrl: 'https://en.sse.net.cn/indices/scfinew.jsp',
 };
 
+async function fetchOk(url, { headers = {}, timeout = 25000 } = {}, request = fetch) {
+  let error;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const response = await request(url, { headers: { 'user-agent': 'amazon-risk-radar/1.0', ...headers }, signal: AbortSignal.timeout(timeout) });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response;
+    } catch (current) {
+      error = current;
+      if (!attempt) await new Promise(resolve => setTimeout(resolve, 250));
+    }
+  }
+  throw error;
+}
+
 const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 const cleanTitle = value => value.replace(/[*_`]/g, '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 const decodeXml = value => String(value).replace(/<!\[CDATA\[|\]\]>/g, '').replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code))).replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
@@ -187,20 +202,6 @@ function xmlItems(text, source) {
   return items.sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 24);
 }
 
-function sitemapItems(text, source) {
-  const items = [];
-  for (const match of text.matchAll(/<url>([\s\S]*?)<\/url>/gi)) {
-    const block = match[1];
-    const url = decodeXml(block.match(/<loc>([^<]+)<\/loc>/i)?.[1] || '');
-    const date = decodeXml(block.match(/<lastmod>([^<]+)<\/lastmod>/i)?.[1] || '').slice(0, 10) || null;
-    const slug = decodeURIComponent(new URL(url).pathname.split('/').filter(Boolean).pop() || '').replace(/[-_]+/g, ' ');
-    const title = slug ? slug[0].toUpperCase() + slug.slice(1) : url;
-    if (!source.path.test(url) || !source.relevant.test(`${title} ${url}`)) continue;
-    items.push({ title, url, date, sourceId: source.id, source: source.name, category: source.category, evidence: source.evidence });
-  }
-  return items.sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 40);
-}
-
 async function getState() {
   try { return JSON.parse(await readFile(statePath, 'utf8')); }
   catch { return { seen: [], initializedSources: [], lastRun: null }; }
@@ -209,10 +210,9 @@ async function getState() {
 async function collect() {
   const getSource = async source => {
     try {
-      const response = await fetch(source.url, { headers: { 'user-agent': 'amazon-risk-radar/1.0', ...source.headers }, signal: AbortSignal.timeout(source.timeout || 25000) });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const response = await fetchOk(source.url, { headers: source.headers, timeout: source.timeout });
       const text = await response.text();
-      const items = source.format === 'xml' ? xmlItems(text, source) : source.format === 'sitemap' ? sitemapItems(text, source) : markdownItems(text, source);
+      const items = source.format === 'xml' ? xmlItems(text, source) : markdownItems(text, source);
       return { source, ok: true, items };
     } catch (error) {
       return { source, ok: false, items: [], error: error.message };
@@ -226,8 +226,7 @@ async function collect() {
 
   for (const source of federalRegisters) {
     try {
-      const response = await fetch(source.url, { headers: { 'user-agent': 'amazon-risk-radar/1.0' }, signal: AbortSignal.timeout(25000) });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const response = await fetchOk(source.url);
       const data = await response.json();
       const items = (data.results || []).filter(item => source.relevant.test(`${item.title} ${item.abstract || ''}`)).map(item => ({
         title: cleanTitle(item.title), url: item.html_url, date: item.publication_date, sourceId: source.id,
@@ -240,8 +239,7 @@ async function collect() {
   }
 
   try {
-    const response = await fetch(scfi.url, { headers: { 'user-agent': 'amazon-risk-radar/1.0' }, signal: AbortSignal.timeout(25000) });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const response = await fetchOk(scfi.url);
     const data = await response.json();
     const index = data.data?.lineDataList?.[0];
     if (!data.data?.currentDate || !Number.isFinite(index?.currentContent)) throw new Error('指数数据缺失');
@@ -288,8 +286,10 @@ if (process.argv.includes('--self-test')) {
   assert.equal(isFreshCandidate({ url: 'new', sourceId: 'recovering', date: today }, seen, initialized), false);
   assert.equal(isFreshCandidate({ url: 'old', sourceId: 'ready', date: '2020-01-01' }, seen, initialized), false);
   assert.equal(xmlItems('<rss><item><title><![CDATA[Amazon listing policy]]></title><link>https://example.com/item</link><pubDate>Tue, 08 Sep 2026 01:00:00 GMT</pubDate></item></rss>', { id: 'xml', name: 'XML', category: 'amazon', evidence: '官方', path: /example\.com/, relevant: /listing/ }).length, 1);
-  assert.equal(sitemapItems('<urlset><url><loc>https://example.com/news/ad-update</loc><lastmod>2026-09-08</lastmod></url></urlset>', { id: 'map', name: 'Map', category: 'amazon', evidence: '官方', path: /example\.com\/news/, relevant: /ad update/i }).length, 1);
   assert.equal(balancedFresh([{ sourceId: 'a' }, { sourceId: 'a' }, { sourceId: 'b' }]).map(item => item.sourceId).join(''), 'aba');
+  let attempts = 0;
+  await fetchOk('https://example.com', {}, async () => ++attempts === 1 ? Promise.reject(new Error('temporary')) : { ok: true });
+  assert.equal(attempts, 2);
   console.log('增量筛选检查通过');
   process.exit(0);
 }
