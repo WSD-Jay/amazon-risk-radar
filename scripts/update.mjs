@@ -1,4 +1,5 @@
 import { readFile, readdir, writeFile } from 'node:fs/promises';
+import assert from 'node:assert/strict';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -21,6 +22,30 @@ const sources = [
     relevant: /seller central|policy|listing|title|fba|fbm|fee|advert|\bai\b|delivery|account|mandatory|navigation/i,
   },
   {
+    id: 'amazon-ads', name: 'Amazon Ads 功能更新', category: 'amazon', evidence: '亚马逊官方', format: 'sitemap', timeout: 60000,
+    url: 'https://advertising.amazon.com/sitemap8.xml', headers: { 'accept-encoding': 'identity' },
+    path: /advertising\.amazon\.com\/resources\/whats-new\//i,
+    relevant: /sponsored|store|amazon business|cross-border|creative|generative|\bai\b|advert|campaign|brand|product|targeting|audience/i,
+  },
+  {
+    id: 'amazon-sp-api', name: '亚马逊 SP-API 公告', category: 'amazon', evidence: '亚马逊官方', format: 'xml',
+    url: 'https://developer-docs.amazon.com/sp-api/changelog.rss',
+    path: /developer-docs\.amazon(?:\.com)?\/sp-api\/changelog\//i,
+    relevant: /listing|catalog|product|fulfill|inbound|outbound|order|fee|financ|invoice|tax|shipment|tracking|notification|report|policy|compliance|deprecat|release|carrier/i,
+  },
+  {
+    id: 'cpsc', name: '美国消费品安全委员会召回', category: 'amazon', evidence: '监管机构官方', format: 'xml',
+    url: 'https://www.cpsc.gov/Newsroom/CPSC-RSS-Feed/Recalls-RSS',
+    path: /cpsc\.gov\/Recalls\//i,
+    relevant: /amazon|online|e-commerce|violate|mandatory standard/i,
+  },
+  {
+    id: 'discovery-amazon', name: '亚马逊政策主题发现', category: 'amazon', evidence: '公开线索 · 待官方确认', format: 'xml',
+    url: 'https://news.google.com/rss/search?q=%22Amazon%20seller%22%20(policy%20OR%20listing%20OR%20advertising%20OR%20AI%20OR%20FBA)%20when%3A2d&hl=en-US&gl=US&ceid=US%3Aen',
+    path: /news\.google\.com\/rss\/articles\//i,
+    relevant: /amazon|seller|listing|advert|fba|policy|title|artificial intelligence|\bai\b/i,
+  },
+  {
     id: 'ustr', name: '美国贸易代表办公室', category: 'tax', evidence: '官方一手',
     url: 'https://r.jina.ai/https://ustr.gov/about-us/policy-offices/press-office/press-releases',
     path: /ustr\.gov\/about\/policy-offices\/press-office\/press-releases\/\d{4}\//i,
@@ -39,10 +64,34 @@ const sources = [
     relevant: /vat|custom|e-commerce|cbam|epr|tax|import|control/i,
   },
   {
+    id: 'hmrc', name: '英国税务海关总署', category: 'tax', evidence: '官方一手', format: 'xml',
+    url: 'https://www.gov.uk/government/organisations/hm-revenue-customs.atom',
+    path: /gov\.uk\//i,
+    relevant: /vat|custom|tariff|import|export|e-commerce|online marketplace|packaging|epr|low.value|duty|rules of origin/i,
+  },
+  {
+    id: 'irs', name: '美国国税局', category: 'tax', evidence: '官方一手',
+    url: 'https://r.jina.ai/https://www.irs.gov/newsroom/news-releases-for-current-month',
+    path: /irs\.gov\/newsroom\//i,
+    relevant: /1099|information return|small business|e-commerce|online marketplace|payment card|third-party network|sales tax/i,
+  },
+  {
+    id: 'discovery-tax', name: '税务关税主题发现', category: 'tax', evidence: '公开线索 · 待官方确认', format: 'xml',
+    url: 'https://news.google.com/rss/search?q=(ecommerce%20OR%20%22online%20seller%22)%20(VAT%20OR%20tariff%20OR%20customs%20OR%20%22de%20minimis%22)%20when%3A2d&hl=en-US&gl=US&ceid=US%3Aen',
+    path: /news\.google\.com\/rss\/articles\//i,
+    relevant: /vat|tax|tariff|custom|de minimis|duty|e-commerce|amazon/i,
+  },
+  {
     id: 'shenzhen', name: '深圳海关', category: 'logistics', evidence: '官方一手',
     url: 'https://r.jina.ai/http://shenzhen.customs.gov.cn/shenzhen_customs/511680/511681/index.html',
     path: /shenzhen\.customs\.gov\.cn\/.*\.html/i,
     relevant: /查验|海关|跨境|出口|进口|口岸|物流|关税|报关|监管|通关/,
+  },
+  {
+    id: 'gacc', name: '海关总署', category: 'logistics', evidence: '官方一手',
+    url: 'https://r.jina.ai/http://www.customs.gov.cn/customs/302249/302266/index.html',
+    path: /customs\.gov\.cn\/customs\/20\d{2}-\d{2}\//i,
+    relevant: /出口|跨境|申报|商品编号|归类|原产地|关税|报关|通关|监管|加工贸易|知识产权|电池|锂电|危险品/,
   },
   {
     id: 'maersk', name: '马士基', category: 'logistics', evidence: '承运人一手',
@@ -50,20 +99,50 @@ const sources = [
     path: /maersk\.com\/news\/articles\/\d{4}\//i,
     relevant: /market update|schedule|blank sailing|port|surcharge|custom|tariff|disruption|strike|red sea|asia|china|europe|united states/i,
   },
+  {
+    id: 'msc', name: 'MSC 客户公告', category: 'logistics', evidence: '承运人一手',
+    url: 'https://r.jina.ai/https://www.msc.com/en/newsroom/customer-advisories',
+    path: /msc\.com\/en\/newsroom\/customer-advisories\/\d{4}\//i,
+    relevant: /asia|china|united states|usa|u\.s\.|europe|surcharge|blank|sailing|schedule|port|red sea|suez|panama|tariff|custom|congestion|strike/i,
+  },
+  {
+    id: 'discovery-logistics', name: '华南物流查验主题发现', category: 'logistics', evidence: '公开线索 · 待官方确认', format: 'xml',
+    url: 'https://news.google.com/rss/search?q=(%E6%B7%B1%E5%9C%B3%20OR%20%E5%8D%8E%E5%8D%97)%20(%E6%B5%B7%E5%85%B3%20OR%20%E6%9F%A5%E9%AA%8C%20OR%20%E6%B5%B7%E8%BF%90%20OR%20%E7%89%A9%E6%B5%81)%20when%3A2d&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans',
+    path: /news\.google\.com\/rss\/articles\//i,
+    relevant: /深圳|海关|查验|海运|欧洲|物流|亚马逊|关税|港口|船期|清关/,
+  },
 ];
 
-const federalRegister = {
-  id: 'federal-register', name: '美国联邦公报', category: 'tax', evidence: '官方一手',
-  url: 'https://www.federalregister.gov/api/v1/documents.json?per_page=20&order=newest&conditions%5Bagencies%5D%5B%5D=u-s-customs-and-border-protection',
-  relevant: /tariff|custom|import|export|trade|de minimis|forced labor|section 301/i,
+const federalRegisters = [
+  ['federal-register', '美国联邦公报（CBP）', 'u-s-customs-and-border-protection'],
+  ['federal-register-ustr', '美国联邦公报（USTR）', 'trade-representative-office-of-united-states'],
+  ['federal-register-usitc', '美国联邦公报（USITC）', 'international-trade-commission'],
+].map(([id, name, agency]) => ({
+  id, name, category: 'tax', evidence: '官方一手',
+  url: `https://www.federalregister.gov/api/v1/documents.json?per_page=30&order=newest&conditions%5Bagencies%5D%5B%5D=${agency}`,
+  relevant: /tariff|custom|import|export|trade|de minimis|forced labor|section 301|antidumping|countervailing|investigation/i,
+}));
+
+const scfi = {
+  id: 'scfi', name: '上海航运交易所 SCFI', category: 'logistics', evidence: '行业指数一手',
+  url: 'https://en.sse.net.cn/currentIndex?indexName=scfi',
+  publicUrl: 'https://en.sse.net.cn/indices/scfinew.jsp',
 };
 
 const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 const cleanTitle = value => value.replace(/[*_`]/g, '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+const decodeXml = value => String(value).replace(/<!\[CDATA\[|\]\]>/g, '').replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code))).replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 
 function dateFromUrl(url) {
   const match = url.match(/\/(20\d{2})\/(\d{2})\/(\d{2})\//) || url.match(/(20\d{2})-(\d{2})-(\d{2})/);
   return match ? `${match[1]}-${match[2]}-${match[3]}` : null;
+}
+
+function dateFromText(value) {
+  const match = value.match(/\b(\d{2})\/(\d{2})\/(20\d{2})\b/);
+  if (match) return `${match[3]}-${match[1]}-${match[2]}`;
+  const parsed = Date.parse(value);
+  return Number.isNaN(parsed) ? null : new Date(parsed).toISOString().slice(0, 10);
 }
 
 function ageInDays(date) {
@@ -80,10 +159,46 @@ function markdownItems(text, source) {
     const url = match[2].replace(/&amp;/g, '&');
     if (!source.path.test(url) || !source.relevant.test(title) || seen.has(url)) continue;
     seen.add(url);
-    items.push({ title, url, date: dateFromUrl(url), sourceId: source.id, source: source.name, category: source.category, evidence: source.evidence });
+    items.push({ title, url, date: dateFromUrl(url) || dateFromText(title), sourceId: source.id, source: source.name, category: source.category, evidence: source.evidence });
     if (items.length >= 16) break;
   }
   return items;
+}
+
+function xmlValue(block, tag) {
+  return decodeXml(block.match(new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${tag}>`, 'i'))?.[1] || '').trim();
+}
+
+function xmlItems(text, source) {
+  const items = [];
+  for (const match of text.matchAll(/<(?:item|entry)\b[^>]*>([\s\S]*?)<\/(?:item|entry)>/gi)) {
+    const block = match[1];
+    const title = cleanTitle(xmlValue(block, 'title'));
+    const link = xmlValue(block, 'link') || decodeXml(block.match(/<link\b[^>]*\bhref=["']([^"']+)/i)?.[1] || '');
+    const id = xmlValue(block, 'id');
+    const url = id.startsWith(`${link}#`) ? id : link;
+    const summary = cleanTitle(xmlValue(block, 'summary') || xmlValue(block, 'description'));
+    if (!title || !source.path.test(link) || !source.relevant.test(`${title} ${summary}`)) continue;
+    items.push({
+      title, url, date: dateFromText(xmlValue(block, 'pubDate') || xmlValue(block, 'updated') || xmlValue(block, 'published')),
+      sourceId: source.id, source: source.name, category: source.category, evidence: source.evidence,
+    });
+  }
+  return items.sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 24);
+}
+
+function sitemapItems(text, source) {
+  const items = [];
+  for (const match of text.matchAll(/<url>([\s\S]*?)<\/url>/gi)) {
+    const block = match[1];
+    const url = decodeXml(block.match(/<loc>([^<]+)<\/loc>/i)?.[1] || '');
+    const date = decodeXml(block.match(/<lastmod>([^<]+)<\/lastmod>/i)?.[1] || '').slice(0, 10) || null;
+    const slug = decodeURIComponent(new URL(url).pathname.split('/').filter(Boolean).pop() || '').replace(/[-_]+/g, ' ');
+    const title = slug ? slug[0].toUpperCase() + slug.slice(1) : url;
+    if (!source.path.test(url) || !source.relevant.test(`${title} ${url}`)) continue;
+    items.push({ title, url, date, sourceId: source.id, source: source.name, category: source.category, evidence: source.evidence });
+  }
+  return items.sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 40);
 }
 
 async function getState() {
@@ -92,28 +207,53 @@ async function getState() {
 }
 
 async function collect() {
-  const results = await Promise.all(sources.map(async source => {
+  const getSource = async source => {
     try {
-      const response = await fetch(source.url, { headers: { 'user-agent': 'amazon-risk-radar/1.0' }, signal: AbortSignal.timeout(25000) });
+      const response = await fetch(source.url, { headers: { 'user-agent': 'amazon-risk-radar/1.0', ...source.headers }, signal: AbortSignal.timeout(source.timeout || 25000) });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const items = markdownItems(await response.text(), source);
+      const text = await response.text();
+      const items = source.format === 'xml' ? xmlItems(text, source) : source.format === 'sitemap' ? sitemapItems(text, source) : markdownItems(text, source);
       return { source, ok: true, items };
     } catch (error) {
       return { source, ok: false, items: [], error: error.message };
     }
-  }));
+  };
+
+  const results = [];
+  for (let index = 0; index < sources.length; index += 4) {
+    results.push(...await Promise.all(sources.slice(index, index + 4).map(getSource)));
+  }
+
+  for (const source of federalRegisters) {
+    try {
+      const response = await fetch(source.url, { headers: { 'user-agent': 'amazon-risk-radar/1.0' }, signal: AbortSignal.timeout(25000) });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      const items = (data.results || []).filter(item => source.relevant.test(`${item.title} ${item.abstract || ''}`)).map(item => ({
+        title: cleanTitle(item.title), url: item.html_url, date: item.publication_date, sourceId: source.id,
+        source: source.name, category: source.category, evidence: source.evidence,
+      }));
+      results.push({ source, ok: true, items });
+    } catch (error) {
+      results.push({ source, ok: false, items: [], error: error.message });
+    }
+  }
 
   try {
-    const response = await fetch(federalRegister.url, { headers: { 'user-agent': 'amazon-risk-radar/1.0' }, signal: AbortSignal.timeout(25000) });
+    const response = await fetch(scfi.url, { headers: { 'user-agent': 'amazon-risk-radar/1.0' }, signal: AbortSignal.timeout(25000) });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
-    const items = (data.results || []).filter(item => federalRegister.relevant.test(`${item.title} ${item.abstract || ''}`)).map(item => ({
-      title: cleanTitle(item.title), url: item.html_url, date: item.publication_date, sourceId: federalRegister.id,
-      source: federalRegister.name, category: federalRegister.category, evidence: federalRegister.evidence,
-    }));
-    results.push({ source: federalRegister, ok: true, items });
+    const index = data.data?.lineDataList?.[0];
+    if (!data.data?.currentDate || !Number.isFinite(index?.currentContent)) throw new Error('指数数据缺失');
+    const change = Number.isFinite(index.percentage) ? `，较上周 ${index.percentage >= 0 ? '+' : ''}${index.percentage.toFixed(2)}%` : '';
+    const items = [{
+      title: `SCFI 综合指数 ${index.currentContent.toFixed(2)}${change}`,
+      url: `${scfi.publicUrl}#${data.data.currentDate}`, date: data.data.currentDate,
+      sourceId: scfi.id, source: scfi.name, category: scfi.category, evidence: scfi.evidence,
+    }];
+    results.push({ source: scfi, ok: true, items });
   } catch (error) {
-    results.push({ source: federalRegister, ok: false, items: [], error: error.message });
+    results.push({ source: scfi, ok: false, items: [], error: error.message });
   }
   return results;
 }
@@ -124,13 +264,32 @@ function isFreshCandidate(item, seen, initializedSources) {
   return age === null || (age >= -1 && age <= 2.5);
 }
 
+function balancedFresh(items, limit = 12, perSource = 4) {
+  const buckets = new Map();
+  for (const item of items) {
+    const bucket = buckets.get(item.sourceId) || [];
+    if (bucket.length < perSource) bucket.push(item);
+    buckets.set(item.sourceId, bucket);
+  }
+  const selected = [];
+  while (selected.length < limit && [...buckets.values()].some(bucket => bucket.length)) {
+    for (const bucket of buckets.values()) {
+      if (bucket.length && selected.length < limit) selected.push(bucket.shift());
+    }
+  }
+  return selected;
+}
+
 if (process.argv.includes('--self-test')) {
   const seen = new Set(['seen']);
   const initialized = new Set(['ready']);
-  console.assert(isFreshCandidate({ url: 'new', sourceId: 'ready', date: today }, seen, initialized));
-  console.assert(!isFreshCandidate({ url: 'seen', sourceId: 'ready', date: today }, seen, initialized));
-  console.assert(!isFreshCandidate({ url: 'new', sourceId: 'recovering', date: today }, seen, initialized));
-  console.assert(!isFreshCandidate({ url: 'old', sourceId: 'ready', date: '2020-01-01' }, seen, initialized));
+  assert.equal(isFreshCandidate({ url: 'new', sourceId: 'ready', date: today }, seen, initialized), true);
+  assert.equal(isFreshCandidate({ url: 'seen', sourceId: 'ready', date: today }, seen, initialized), false);
+  assert.equal(isFreshCandidate({ url: 'new', sourceId: 'recovering', date: today }, seen, initialized), false);
+  assert.equal(isFreshCandidate({ url: 'old', sourceId: 'ready', date: '2020-01-01' }, seen, initialized), false);
+  assert.equal(xmlItems('<rss><item><title><![CDATA[Amazon listing policy]]></title><link>https://example.com/item</link><pubDate>Tue, 08 Sep 2026 01:00:00 GMT</pubDate></item></rss>', { id: 'xml', name: 'XML', category: 'amazon', evidence: '官方', path: /example\.com/, relevant: /listing/ }).length, 1);
+  assert.equal(sitemapItems('<urlset><url><loc>https://example.com/news/ad-update</loc><lastmod>2026-09-08</lastmod></url></urlset>', { id: 'map', name: 'Map', category: 'amazon', evidence: '官方', path: /example\.com\/news/, relevant: /ad update/i }).length, 1);
+  assert.equal(balancedFresh([{ sourceId: 'a' }, { sourceId: 'a' }, { sourceId: 'b' }]).map(item => item.sourceId).join(''), 'aba');
   console.log('增量筛选检查通过');
   process.exit(0);
 }
@@ -140,7 +299,8 @@ const collected = await collect();
 const candidates = [...new Map(collected.flatMap(result => result.items).map(item => [item.url, item])).values()];
 const seen = new Set(state.seen || []);
 const initializedSources = new Set(state.initializedSources || []);
-const fresh = candidates.filter(item => isFreshCandidate(item, seen, initializedSources)).slice(0, 12);
+const freshPool = candidates.filter(item => isFreshCandidate(item, seen, initializedSources));
+const fresh = ['amazon', 'tax', 'logistics'].flatMap(category => balancedFresh(freshPool.filter(item => item.category === category)));
 
 const groups = [
   ['amazon', '亚马逊政策'], ['tax', '税务与关税'], ['logistics', '物流与查验'],
@@ -166,7 +326,7 @@ const css = `
 
 function newItemsHtml() {
   if (!fresh.length) return '<div class="card"><span class="badge ok">今日新增</span><h2>今日未发现需要行动的重大新变化</h2><p>仍需关注的事项与采集状态见下方；采集失败不会被写成“没有变化”。</p></div>';
-  return groups.filter(group => group.items.length).map(group => `<section class="card"><span class="badge">今日新增</span><h2>${group.label}</h2>${group.items.map(item => `<article class="item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(actions[item.category])}</p><div class="meta"><span>${escapeHtml(item.source)}</span><span>${escapeHtml(item.evidence)}</span>${item.date ? `<span>${item.date}</span>` : ''}</div><a href="${escapeHtml(item.url)}">查看原文</a></article>`).join('')}</section>`).join('');
+  return groups.filter(group => group.items.length).map(group => `<section class="card"><span class="badge">今日新增</span><h2>${group.label}</h2>${group.items.map(item => `<article class="item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.evidence.includes('待官方确认') ? '仅作线索，找到官方原文前不要据此改动。' : actions[item.category])}</p><div class="meta"><span>${escapeHtml(item.source)}</span><span>${escapeHtml(item.evidence)}</span>${item.date ? `<span>${item.date}</span>` : ''}</div><a href="${escapeHtml(item.url)}">查看原文</a></article>`).join('')}</section>`).join('');
 }
 
 function watchHtml() {
@@ -174,7 +334,7 @@ function watchHtml() {
 }
 
 function sourceHtml() {
-  return `<section class="card"><span class="badge ok">采集透明度</span><h2>来源状态</h2>${collected.map(result => `<div class="source-row"><span>${escapeHtml(result.source.name)}</span><small>${result.ok ? `成功 · ${result.items.length} 条候选` : `失败 · ${escapeHtml(result.error)}`}</small></div>`).join('')}</section>`;
+  return `<section class="card"><span class="badge ok">采集透明度</span><h2>来源状态</h2>${collected.map(result => `<div class="source-row"><span>${escapeHtml(result.source.name)}</span><small>${escapeHtml(result.source.evidence)} · ${result.ok ? `成功 · ${result.items.length} 条候选` : `失败 · ${escapeHtml(result.error)}`}</small></div>`).join('')}</section>`;
 }
 
 async function articleNames() {
