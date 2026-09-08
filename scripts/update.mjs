@@ -43,7 +43,7 @@ const sources = [
     id: 'discovery-amazon', name: '亚马逊政策主题发现', category: 'amazon', evidence: '公开线索 · 待官方确认', format: 'xml',
     url: 'https://news.google.com/rss/search?q=%22Amazon%20seller%22%20(policy%20OR%20listing%20OR%20advertising%20OR%20AI%20OR%20FBA)%20when%3A2d&hl=en-US&gl=US&ceid=US%3Aen',
     path: /news\.google\.com\/rss\/articles\//i,
-    relevant: /amazon|seller|listing|advert|fba|policy|title|artificial intelligence|\bai\b/i,
+    relevant: /listing|advert|fba|policy|title|artificial intelligence|\bai\b|compliance|fee|fulfillment|account/i,
   },
   {
     id: 'ustr', name: '美国贸易代表办公室', category: 'tax', evidence: '官方一手',
@@ -79,7 +79,7 @@ const sources = [
     id: 'discovery-tax', name: '税务关税主题发现', category: 'tax', evidence: '公开线索 · 待官方确认', format: 'xml',
     url: 'https://news.google.com/rss/search?q=(ecommerce%20OR%20%22online%20seller%22)%20(VAT%20OR%20tariff%20OR%20customs%20OR%20%22de%20minimis%22)%20when%3A2d&hl=en-US&gl=US&ceid=US%3Aen',
     path: /news\.google\.com\/rss\/articles\//i,
-    relevant: /vat|tax|tariff|custom|de minimis|duty|e-commerce|amazon/i,
+    relevant: /vat|tax|tariff|custom|de minimis|duty/i,
   },
   {
     id: 'shenzhen', name: '深圳海关', category: 'logistics', evidence: '官方一手',
@@ -109,7 +109,7 @@ const sources = [
     id: 'discovery-logistics', name: '华南物流查验主题发现', category: 'logistics', evidence: '公开线索 · 待官方确认', format: 'xml',
     url: 'https://news.google.com/rss/search?q=(%E6%B7%B1%E5%9C%B3%20OR%20%E5%8D%8E%E5%8D%97)%20(%E6%B5%B7%E5%85%B3%20OR%20%E6%9F%A5%E9%AA%8C%20OR%20%E6%B5%B7%E8%BF%90%20OR%20%E7%89%A9%E6%B5%81)%20when%3A2d&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans',
     path: /news\.google\.com\/rss\/articles\//i,
-    relevant: /深圳|海关|查验|海运|欧洲|物流|亚马逊|关税|港口|船期|清关/,
+    relevant: /海关|查验|海运|物流|关税|港口|船期|清关|拥堵|延误|扣关|甩柜|停航|运价|罢工/,
   },
 ];
 
