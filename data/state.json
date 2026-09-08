@@ -57,6 +57,7 @@
     "https://www.cpsc.gov/Recalls/2026/DUMOS-Nine-Drawer-Dressers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units",
     "https://www.cpsc.gov/Recalls/2026/Deli-Jerry-Fuel-Containers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Burn-Hazard-and-Child-Poisoning-Violate-Mandatory-Standard-for-Portable-Fuel-Containers-Sold-on-Walmart-com-by-Deli-OfficeSupplies",
     "https://www.cpsc.gov/Recalls/2026/Yamazuki-Recalls-Youth-All-Terrain-Vehicles-ATVs-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard-Violates-Mandatory-Standard-for-ATVs",
+    "https://news.google.com/rss/articles/CBMijwFBVV95cUxNV3ZZcmlhcHFRM3lmYmZYbFJSN3MwM3RWT2lhb0JxUWRaaVZHaGVCVXg3c0hzS05iZFpFNVBid05GckdfdUpuMHBnT1F2TmhBYmxYWnpMTUVFWjlpNHpJTzJLeGViTVo1OFBNTl9YdmtQUHVNMFNYS3UtdXVraXVxU1A0emlDejRJa193OG5ycw?oc=5",
     "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/august/media-credentialing-opens-g20-trade-ministerial-milwaukee-wisconsin",
     "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/august/road-iowa-america-first-trade-raising-wages-reshoring-jobs-and-restoring-americas-global",
     "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/american-steelworkers-manufacturers-and-farmers-praise-president-trumps-tariff-action-combat-forced",
@@ -119,6 +120,7 @@
     "https://www.msc.com/en/newsroom/customer-advisories/2026/august/resumption-of-selected-east%E2%80%93west-services-in-the-red-sea-region",
     "https://www.msc.com/en/newsroom/customer-advisories/2026/august/2026-golden-week-sailing-programme-trade-asia-to-europe",
     "https://www.msc.com/en/newsroom/customer-advisories/2026/august/price-announcement-trade-from-far-east-to-sub-saharan-africa-and-indian-ocean",
+    "https://news.google.com/rss/articles/CBMijgFBVV95cUxOVjJtWUdUdDVMWUNzTUIzTVM5QmV1RmQweUFkZVpPakh6dWprYUVfdDk0UVNiTkhldF9RWkJSQmFVMzZHYnZ3UXRSR2Y3bnVKV291SGNUaFRJTENXelVkWktXZVFnZTR3MWhrVUdJTEtqc04wS1hZTnVBNU5NV3pWZFhWT2RSemYxVjZIOS13?oc=5",
     "https://news.google.com/rss/articles/CBMiekFVX3lxTE1leFBMSUVxRFFvLV9hWDVtdTdUZVJCZG9wbE9qMmZjaDRBeUFlamtzcW9lV1VHbU9BMVpJSTRYZWJCNEpDQU9idXFua0hWdU1pVno4WEluajlLazIwaUF2cGVOc051aWkxYUpwNTlpRlZsZFNWdGkwRUVn?oc=5",
     "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNUxkNWsycF90d0YwWnpOc1FHOWRFRnl6ajRNMFlpekZQY1lmOHlhRFB5Rkh1R1NFcHBmc2lxSnZacERZZjJ5NXZMeXg1aVN2YXREYnpid1VSMUZOMV92VkMyeGxCYzlMOERBZnZwQWRUXzJYVHNRdGtqUXQ3cEt2emdQc2FzVTVN?oc=5",
     "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOalZSeTFlNm5wTlBQVFFWamZKWUFPOV9QUHZWeFJJcHhiNVBvS1VLZzIwMkxYRVk3NGJpeXNBclRZaFlTQ0NPaFBLamgxOUhJalNEc2tmaUU2LWt5TVVKOUEwenFMNVhGVmdTZTgtVXN2YUZYNG5Sa0FNTUt5UElTdENZWHotYkhDSDdZ?oc=5",
@@ -288,7 +290,7 @@
     "federal-register-ustr",
     "amazon-ads"
   ],
-  "lastRun": "2026-09-08T02:55:19.102Z",
+  "lastRun": "2026-09-08T05:56:50.575Z",
   "sourceStatus": [
     {
       "id": "amazon",
@@ -317,7 +319,7 @@
     {
       "id": "discovery-amazon",
       "ok": true,
-      "count": 0,
+      "count": 1,
       "error": null
     },
     {
@@ -383,7 +385,7 @@
     {
       "id": "discovery-logistics",
       "ok": true,
-      "count": 5,
+      "count": 6,
       "error": null
     },
     {
