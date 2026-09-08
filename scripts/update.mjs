@@ -190,7 +190,7 @@ function page({ archive = [] } = {}) {
 
 const names = await articleNames();
 await writeFile(path.join(articleDir, `${today}.html`), page(), 'utf8');
-await writeFile(path.join(siteDir, 'index.html'), page({ archive: names.slice(0, 30) }), 'utf8');
+await writeFile(path.join(siteDir, 'index.html'), page({ archive: names }), 'utf8');
 await writeFile(statePath, `${JSON.stringify({ seen: [...new Set([...candidates.map(item => item.url), ...(state.seen || [])])].slice(0, 2000), initializedSources: [...new Set([...initializedSources, ...collected.filter(result => result.ok).map(result => result.source.id)])], lastRun: new Date().toISOString(), sourceStatus: collected.map(result => ({ id: result.source.id, ok: result.ok, count: result.items.length, error: result.error || null })) }, null, 2)}\n`, 'utf8');
 
 console.log(`${today}: ${fresh.length} 条新增，${collected.filter(result => result.ok).length}/${collected.length} 个来源成功`);
