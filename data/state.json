@@ -4,7 +4,6 @@
     "https://sellercentral.amazon.com/seller-forums/discussions/t/20ac07d9-b54a-4b0e-aee8-af05ef54d69b",
     "https://sellercentral.amazon.com/seller-forums/discussions/t/79802700-66ed-45ec-bb2b-8641f1890dc5",
     "https://sellercentral.amazon.com/seller-forums/discussions/t/1993b9e7-890d-4de6-b7f4-75c2ba845cfd",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/deaf2056-f6ee-4573-92aa-6e70c16b9598",
     "https://advertising.amazon.com/en-us/resources/whats-new/geographic-insights-activation-pre-built-indices/?ref_=a20m_us_wn_gw",
     "https://advertising.amazon.com/en-us/resources/whats-new/unboxed-2026-responsive-ecommerce-creative/?ref_=a20m_us_wn_gw",
     "https://advertising.amazon.com/en-us/resources/whats-new/conversational-experience-amazon-ads-agent/?ref_=a20m_us_wn_gw",
@@ -77,7 +76,7 @@
     "https://www.gov.uk/guidance/monitoring-emissions-asan-overseas-installation-producing-carbon-border-adjustment-mechanism-cbam-goods-exported-to-the-uk#2026-10-16T13:17:00Z",
     "https://www.gov.uk/government/publications/carbon-border-adjustment-mechanism-cbam-technical-guidance-for-monitoring-verifying-and-reporting-emissions#2026-10-16T13:14:42Z",
     "https://www.gov.uk/guidance/keeping-records-for-carbon-border-adjustment-mechanism-cbam#2026-10-16T12:41:23Z",
-    "https://news.google.com/rss/articles/CBMifkFVX3lxTE9Idzk5TnhlYmU0ZlZNVnlvSnMxTi1oemZYLTlTOTNOTVZfOENwODVZVTZnVmxTUlRfR1FPNU83Z3pWbk5oNVlFX0VmSncyVnBWUmFwUmdQMHdRZS0yN1VrUGNlLTQzekFMMEFSMWJ4UVhWNkMwMVJsNXdkLXRvdw?oc=5",
+    "https://news.google.com/rss/articles/CBMidEFVX3lxTFBqVmtQam9pMlp6bnE3SHBIOFVaWXdDQzE2Mk5oRmNwQ3J4TkJuY25PRERJWXZIdUNIX3Z3cUdOVkp2aWhxUE9SYkQ1eWVwT2ZWOW5ZSXVuTGpoOWhGZEN5Y0owWnFjRUJQS2FSbUpQSHdaQ0Fo?oc=5",
     "http://shenzhen.customs.gov.cn/shenzhen_customs/2026-10/15/article_2026101511171950747.html",
     "http://shenzhen.customs.gov.cn/shenzhen_customs/2026-10/15/article_2026101511153328860.html",
     "http://shenzhen.customs.gov.cn/shenzhen_customs/2026-09/30/article_2026093010321658101.html",
@@ -86,6 +85,7 @@
     "http://shenzhen.customs.gov.cn/shenzhen_customs/2026-09/24/article_2026092409043815683.html",
     "http://shenzhen.customs.gov.cn/shenzhen_customs/2026-09/14/article_2026091415151633547.html",
     "http://www.customs.gov.cn/customs/2026-10/15/article_2026101511283181601.html",
+    "https://www.maersk.com/news/articles/2026/10/19/adidas-sporting-event-logistics",
     "https://www.maersk.com/news/articles/2026/10/14/latin-america-market-update-october",
     "https://www.maersk.com/news/articles/2026/10/13/india-middle-east-and-africa-market-update-october",
     "https://www.maersk.com/news/articles/2026/10/08/pharma-asia-international-conference",
@@ -102,12 +102,14 @@
     "https://www.msc.com/en/newsroom/customer-advisories/2026/september/prs-and-scs-trade-from-asia-to-mediterranean",
     "https://www.msc.com/en/newsroom/customer-advisories/2026/september/2026-golden-week-sailing-programme-trade-asia-to-usa",
     "https://www.msc.com/en/newsroom/customer-advisories/2026/september/pa-trade-asia-to-nwc-med-and-black-sea",
+    "https://news.google.com/rss/articles/CBMiuANBVV95cUxOcXRBQllaeW91anE1dkh6WHBYMy1HNjRJS0p2dlhDUFAtMjYycXVzQlRrS1VIcnl4X2VzYXNlbXhvdHZUVkpON0VTa3J4WUNyZFpwOHVfQlFXV0Z5SXlQNVR0XzVpSy1idHROMkZfT2tHNEVVanY0U1NENW1wMEMwVkVUclBYNGJfVFAtejdSaWxMZl80cDdPaUphdldlMUV4Q2xrSVJPZ0dNOHJNdzVDZDdxc2xBNkpYMkhhVHRraVlQcmZJdlEyWmlZdV9iTVZWMzM1VTdUSXQtVHE0UnVjcmNyTTByU2pRbkE4SjkxMHFlT0VhTUJNQ1JuMGI4OWdYNUJKVEZjT0pNM2pTVGRZWEUtMGVJWTE2MHljempqMlNhSExsTGxDd25LQnRXOWhkdnROOEdsTTJKazIwcElXck4yMlg3em1JUnpfSUtZOFRqc1ktWklMdXR0Q1lhYW1HOHVBRmxhejFSU0NrOGVPRERoUEJoSmJsY21DRlBFV3ZhMi1nWmtHV1ZEdXdyOUZmTmhTUlI5YWV5S0NGTUhHNDlicHBRV3FJLVM5ZDdWdlkyb3NEUmhlRQ?oc=5",
+    "https://news.google.com/rss/articles/CBMijAFBVV95cUxOV0ltcUdfU1lrbEpheC0xT2xTbnBWeDhYdzdYbHlyYnZwOWw2elpTeGlUTUdfQ2J4WEtFeV96S3RDMWdpemdDQkZHN0Zxd3ViV2pPZnRIZFZaYXlOdGdtSjdtQTloZzFveEN5WGNFT2dxWHFLQ2JGMWJNOFlwOXpJVmd1RnNoeFlsRy1wdA?oc=5",
     "https://news.google.com/rss/articles/CBMickFVX3lxTE04VjJTY1I0TnVjdEdIVUI2ZU9kYzExWHlqelJsU2pqVnROdmZuWnVUcEd2QzlZbWpOSEpSQ0tkVGFoZFduUnhEbXMzXzJuMERrdU1LdlRQVVo5WGktS2puODJ1LVQyaTZmMnA5akZnOUVyUQ?oc=5",
+    "https://news.google.com/rss/articles/CBMiXkFVX3lxTE4xZDRyT2NleXEtbTlaeUtjNmxMUWhLUHEzdm1TNFQ4Mjd4R1JYRHgyOUpiSjZzSkcwLVJUdncxUzk4UmJiUmZwQURKVFJYOVZ1bE9GLVhoYmQzakZabVE?oc=5",
     "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0zTDlsdWl4UTdHMGk4VmVpVFJ2N0tXYUZIUG5ibkRsNTBJaTF1bzFHSF9rRHVYNnRyczFBd2ZERXlRMnB0V2V2Mi1ZQkpOS2VPZWZ3MkdSa3lGa1k0SGc?oc=5",
-    "https://news.google.com/rss/articles/CBMid0FVX3lxTE1rNkxqS0V6UVVVNFdub3I0aDVIaHJzTEg3emZfMW5TWEY5RlJNZGtnZXdCS0wxYW1Dcy1xa1dMeGEzbnliV1BLQ1VlSGdqOEFSU05iR1B2ekVhbkF0N0NIVjJEQVluZHI0dTVMdjRVcWVvYzhKYXVV?oc=5",
-    "https://news.google.com/rss/articles/CBMijAFBVV95cUxOcXNsZ0tMMWhHQ1AwVGJRMURYWm1kOWZWenZDb3VoQWVuTmU5Vng4SXRlVW5qSlhSYmV1U0VPRm5NN0MwTUFrOW5iWlViamdreE9JQzMxWXdLQS1CXzFPb1RabDNYVmhvV24xcWdKelRHWjM2LWVkVVRHeV85amFFQW1mcE1vVzFFSlpDdQ?oc=5",
-    "https://news.google.com/rss/articles/CBMiSEFVX3lxTFB1bmtEZnE0ZXAtVUJZV3A5WER3MnBJRGtFY1ByNmJwZEVYTHAzSzN1QWdCWlZtRHBuaTZBT2J5VlZQSGF6QnRYVA?oc=5",
-    "https://news.google.com/rss/articles/CBMiowFBVV95cUxNNU05OFFiTnF2eHA2ZDdXY29jT01TUjR2YUtZeU5DRFhfNGx6UXNVZWEydEQ4S0hsaG5pQWs0Z2dPLUp0bmZfTG9jRzRadFpIZVZPZllvclpwbFlqeS04Zm43M1dXaUthLXAxYlJnZ1dJQ0R6dlYxTUxnWkt6T3c1UE1vTWhoX29TazBhcVRmV1l1bkNqRTlkUlk1QTFFaU53YnBv?oc=5",
+    "https://news.google.com/rss/articles/CBMihAFBVV95cUxQakI3ZXM1VzVMSFZSaVViOHhNQVZCaW9od2t6NXJ6aV9SRWtrV1VLMjhDYUdQRXQ1MW1kN3B6OEtWWnQ5eEtTVHdJV3BOVmVHUkhweFhmV3N2UGlXeld2NjRwbW5KaThPVlIxeU5wMlY1RnZOMHYxMmtXckFuWW1IbWZVSTE?oc=5",
+    "https://news.google.com/rss/articles/CBMihAFBVV95cUxPYTZJLWZxYjFOVnVtVHVqUW16aVE0WkJmYzItcG40LTFnMlY4Q3QtaGQtcXE4MzA3SDJrX2ZVc05jR1pjLTdvVUM4Rno0VTY2dXFFaC1FcXYwWlh2RXRjT2Z5M3M4UVU2Y2NwTG1nbkh6Ny1fcE9wM0o1cDdmajdzako1UmQ?oc=5",
+    "https://news.google.com/rss/articles/CBMia0FVX3lxTE5ZcmNxTWZVZk9CXzBnRTRMU0stNjJLR2YzNlVKbi1TellZVEZvOXRSNW1TQ0o0VUZ6UjdjRHVGU0d3NXJ3MHBRYVhjMUJrVmdvQ2RDZ1ZINDlESDhRZnB0SE40VFNlbGJEa0ZN?oc=5",
     "https://www.federalregister.gov/documents/2026/10/13/2026-20884/advance-traveler-information-for-rail",
     "https://www.federalregister.gov/documents/2026/10/08/2026-20650/low-value-shipments",
     "https://www.federalregister.gov/documents/2026/10/05/2026-20228/agency-information-collection-activities-court-ordered-refunds-under-the-international-emergency",
@@ -192,6 +194,12 @@
     "https://www.federalregister.gov/documents/2026/10/01/2026-20081/notice-of-receipt-of-complaint-solicitation-of-comments-relating-to-the-public-interest",
     "https://www.federalregister.gov/documents/2026/09/29/2026-19914/methionine-from-france-japan-and-spain-notice-of-commission-determination-to-conduct-full-five-year",
     "https://en.sse.net.cn/indices/scfinew.jsp#2026-10-16",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/deaf2056-f6ee-4573-92aa-6e70c16b9598",
+    "https://news.google.com/rss/articles/CBMifkFVX3lxTE9Idzk5TnhlYmU0ZlZNVnlvSnMxTi1oemZYLTlTOTNOTVZfOENwODVZVTZnVmxTUlRfR1FPNU83Z3pWbk5oNVlFX0VmSncyVnBWUmFwUmdQMHdRZS0yN1VrUGNlLTQzekFMMEFSMWJ4UVhWNkMwMVJsNXdkLXRvdw?oc=5",
+    "https://news.google.com/rss/articles/CBMid0FVX3lxTE1rNkxqS0V6UVVVNFdub3I0aDVIaHJzTEg3emZfMW5TWEY5RlJNZGtnZXdCS0wxYW1Dcy1xa1dMeGEzbnliV1BLQ1VlSGdqOEFSU05iR1B2ekVhbkF0N0NIVjJEQVluZHI0dTVMdjRVcWVvYzhKYXVV?oc=5",
+    "https://news.google.com/rss/articles/CBMijAFBVV95cUxOcXNsZ0tMMWhHQ1AwVGJRMURYWm1kOWZWenZDb3VoQWVuTmU5Vng4SXRlVW5qSlhSYmV1U0VPRm5NN0MwTUFrOW5iWlViamdreE9JQzMxWXdLQS1CXzFPb1RabDNYVmhvV24xcWdKelRHWjM2LWVkVVRHeV85amFFQW1mcE1vVzFFSlpDdQ?oc=5",
+    "https://news.google.com/rss/articles/CBMiSEFVX3lxTFB1bmtEZnE0ZXAtVUJZV3A5WER3MnBJRGtFY1ByNmJwZEVYTHAzSzN1QWdCWlZtRHBuaTZBT2J5VlZQSGF6QnRYVA?oc=5",
+    "https://news.google.com/rss/articles/CBMiowFBVV95cUxNNU05OFFiTnF2eHA2ZDdXY29jT01TUjR2YUtZeU5DRFhfNGx6UXNVZWEydEQ4S0hsaG5pQWs0Z2dPLUp0bmZfTG9jRzRadFpIZVZPZllvclpwbFlqeS04Zm43M1dXaUthLXAxYlJnZ1dJQ0R6dlYxTUxnWkt6T3c1UE1vTWhoX29TazBhcVRmV1l1bkNqRTlkUlk1QTFFaU53YnBv?oc=5",
     "https://news.google.com/rss/articles/CBMirAFBVV95cUxNcVBjSWdKSVpkQmJIc3pWMXlrcXFuczgwNU5aN2JvR1I3UEdIV0s3ekYzM0lWUF9VWnlyNHpmbktmaVU0X1VKSEpuTnJaMkpzYjRWTUVyaHVaLVlXODNnTkZ6cXJzZlNVYnZCZzZiSjMtcGhTTmxjYmFuYXpXeXdYTmlaZ1NFSklBU096UzRIcG1yMTRES01HY01QZFZDOFJoN3RkcERleUt3U044?oc=5",
     "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBYZDU5M3lDdDNqZGd1TG11NkczSlpwekFvVUpLa0hiRmFfTnZyTXRJY29TNEVscmloelJpaE9KcmNIalg1MVdWN0d6ZWlBS1VsRWtSUzNSSGc?oc=5",
     "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9DTzdUaTIwaFJ4NnBqQ0p5QWVZQXp3dU1fRTEtdnA5ZU1VT1NWcVh5QlMyY3hoeFh1aTJzdFEyZzdnMkc3NTc3NnNUeTRZdw?oc=5",
@@ -1088,12 +1096,12 @@
     "federal-register-ustr",
     "amazon-ads"
   ],
-  "lastRun": "2026-10-18T05:52:16.306Z",
+  "lastRun": "2026-10-19T06:10:01.201Z",
   "sourceStatus": [
     {
       "id": "amazon",
       "ok": true,
-      "count": 5,
+      "count": 4,
       "error": null
     },
     {
@@ -1171,7 +1179,7 @@
     {
       "id": "maersk",
       "ok": true,
-      "count": 9,
+      "count": 10,
       "error": null
     },
     {
@@ -1183,7 +1191,7 @@
     {
       "id": "discovery-logistics",
       "ok": true,
-      "count": 6,
+      "count": 8,
       "error": null
     },
     {
