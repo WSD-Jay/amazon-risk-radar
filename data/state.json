@@ -1,17 +1,9 @@
 {
   "seen": [
     "https://sellercentral.amazon.com/seller-forums/discussions/t/b616ad19-4aa0-45dd-8741-ca7b71b24703",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/bc3deccc-28c6-47c1-ade3-9fbed1f29316",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/145b6d0f-999c-4555-896c-c694bda2e470",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/ac660707-60c7-43e3-a3fd-420d7321cc4e",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/57222b70-40df-4574-aa0f-9f815c197987",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/998f83ff-9183-4a2d-8deb-1a41a8442a03",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/f28cb12e-a7bb-4c1c-9e48-4145e75f26cf",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/1589ee95-0be7-4e71-bb75-6ba1c3dda570",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/aa0aee06-aff4-497a-a4b6-9b2ebe06f715",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/f6a85515-cd92-4ad2-8517-29968dc8c4c8",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/302aaac6-6f2b-4d86-bcd2-36fe24f0e6cd",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/39415e92-d2ee-4ca9-8784-fa0a91edca75",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/20ac07d9-b54a-4b0e-aee8-af05ef54d69b",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/2274fa46-6fda-4b1a-b469-9e4439f45ba7",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/79802700-66ed-45ec-bb2b-8641f1890dc5",
     "https://developer-docs.amazon/sp-api/changelog/november-4-2026-sp-api-release",
     "https://developer-docs.amazon/sp-api/changelog/industry-vertical-pricing-audience-values-now-available-in-eu-jp-and-ca-amazon-stores",
     "https://developer-docs.amazon/sp-api/changelog/october-2026-sp-api-release",
@@ -60,6 +52,7 @@
     "https://taxation-customs.ec.europa.eu/news/council-updates-eu-list-non-cooperative-tax-jurisdictions-cooperation-delivers-further-progress-2026-10-09_en",
     "https://taxation-customs.ec.europa.eu/news/tax-administration-eu-summit-tadeus-took-place-dublin-2026-10-07_en",
     "https://taxation-customs.ec.europa.eu/news/cbam-de-minimis-threshold-assessment-2026-09-30_en",
+    "https://www.gov.uk/guidance/customs-declaration-service-service-availability-and-issues#2026-11-07T23:45:00Z",
     "https://www.gov.uk/guidance/report-a-problem-using-the-customs-declaration-service#2026-11-06T16:01:16Z",
     "https://www.gov.uk/government/publications/sixth-trade-specialised-committee-on-customs-cooperation-and-rules-of-origin-agenda#2026-11-06T14:30:09Z",
     "https://www.gov.uk/guidance/exporting-controlled-goods-from-great-britain-during-hmrc-system-issues#2026-11-06T14:13:15Z",
@@ -96,6 +89,9 @@
     "https://www.msc.com/en/newsroom/customer-advisories/2026/october/pa-trade-from-far-east-to-nwc-and-mediterranean-and-black-sea",
     "https://www.msc.com/en/newsroom/customer-advisories/2026/october/schedule-update-trade-asia-to-north-europe",
     "https://www.msc.com/en/newsroom/customer-advisories/2026/october/msc-strengthens-northeast-brazil-connectivity-with-new-suape-port-call",
+    "https://news.google.com/rss/articles/CBMicEFVX3lxTE5FQkVWTW5UVHRMS09pZlF4b3pSSHRXeDN6Vkd5bmdfSUlPZUVGNURBVlYtN2JYb0d5U1l0VWtZVTE2ZlZnUGQ4V3Ywd200MVVGSkFDZERlX0hBMWx0NnBSbGhaSFhMZjgyVW8xWmE1dFc?oc=5",
+    "https://news.google.com/rss/articles/CBMitAJBVV95cUxOSEltNE1WUFBRMXphdVI0SDBINzJtV0o3all0V0ZnS294dDhiMmdCRnlRZ2RWOTR2anlKQ3A5TmQtdVRzNjdmd1gxSVJVUFY2S1o5RlJoQkptUm03X2E1RWZCbUpEckZ4N1N5aE5NdGQ5SmkyR25OMklVa3cwdmNfR0RydjYxbG1tQldRaVJ1bFo2TjVKMkxfRTROb0o2d0pyc3Mya3luRWFFdE0wNy1VRnlZR1dndC0yZkhyYmpGdE9Yek5BSHBOcmRHcFBxN19YaVM5S3ZaenZFUXZOeDVUcDF4ZHVTOUhmTm81end0aGNsTmIwUURPbEc4dzVRcnZQS0RDTkpWalVSY18yQjIwMHFVdHJHeWczcks4MVhPdkFkS2xGR2tFQ0NORnVVeXd2Qmw5ag?oc=5",
+    "https://news.google.com/rss/articles/CBMijwFBVV95cUxNRUpBXzZoc01xVWlMOURHUWRBVGJUR240Ql9ZUEhlWS1xYXdPTGJOd3hyU3pmUXR1ZkpoTm9wRDFGTU5kNnI3ZkFXdjJiTHgxd0xORGVRWS1LNDZnYjltWU05c0s1TnljS2FwUXd4UEZfaHk1T0tYb2kyeEs2ZHdQblZnMlJOOHM1UmYwbHJ2UQ?oc=5",
     "https://www.federalregister.gov/documents/2026/11/06/2026-22735/heightened-requirements-for-foreign-importers-of-record",
     "https://www.federalregister.gov/documents/2026/11/06/2026-22728/document-image-system-dis-pilot-for-used-self-propelled-vehicles-export-document-submission-renewal",
     "https://www.federalregister.gov/documents/2026/11/04/2026-22501/announcement-of-the-client-representative-technical-assistance-portal-crtap-test",
@@ -176,9 +172,18 @@
     "https://www.federalregister.gov/documents/2026/10/20/2026-21458/seamless-carbon-and-alloy-steel-standard-line-and-pressure-pipe-from-georgia-and-india-institution",
     "https://www.federalregister.gov/documents/2026/10/16/2026-21143/n-cyclohexylbenzothiazole-2-sulfenamide-from-china-scheduling-of-the-final-phase-of-countervailing",
     "https://en.sse.net.cn/indices/scfinew.jsp#2026-11-06",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/bc3deccc-28c6-47c1-ade3-9fbed1f29316",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/145b6d0f-999c-4555-896c-c694bda2e470",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/ac660707-60c7-43e3-a3fd-420d7321cc4e",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/57222b70-40df-4574-aa0f-9f815c197987",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/998f83ff-9183-4a2d-8deb-1a41a8442a03",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/f28cb12e-a7bb-4c1c-9e48-4145e75f26cf",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/1589ee95-0be7-4e71-bb75-6ba1c3dda570",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/aa0aee06-aff4-497a-a4b6-9b2ebe06f715",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/f6a85515-cd92-4ad2-8517-29968dc8c4c8",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/302aaac6-6f2b-4d86-bcd2-36fe24f0e6cd",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/39415e92-d2ee-4ca9-8784-fa0a91edca75",
     "https://sellercentral.amazon.com/seller-forums/discussions/t/747fa228-8b28-4949-b3b1-0c6b94e6e65c",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/20ac07d9-b54a-4b0e-aee8-af05ef54d69b",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/79802700-66ed-45ec-bb2b-8641f1890dc5",
     "https://advertising.amazon.com/resources/whats-new/sponsored-brands-collections?ref_=a20m_us_wn_gw",
     "https://advertising.amazon.com/resources/whats-new/location-based-interactive-video-ads-expansion-to-ca-mx-br?ref_=a20m_us_wn_gw",
     "https://advertising.amazon.com/resources/whats-new/enhanced-ads-agent-interactivity-for-amazon-marketing-cloud?ref_=a20m_us_wn_gw",
@@ -209,7 +214,6 @@
     "https://news.google.com/rss/articles/CBMigwFBVV95cUxQV2NzSE1oOXBnZ29VSFlqWkZHNW45UXZscm5GOExYcFN1Q2lXZ2ZfcXZYZzAwVmVTSUF4TzRVOWNEVHptYjFiSmlIS0FfMnk5NFlNMk44Wm5MbEtMeFF1QkdiZWFMMnR3b3RyUDRXcHhQLTliSktFQnhYV2sxNFdLcUJ0bw?oc=5",
     "https://www.federalregister.gov/documents/2026/08/26/2026-17390/automated-commercial-environment-ace-electronic-export-manifest-for-rail-cargo",
     "https://www.federalregister.gov/documents/2026/08/25/2026-17354/establishment-of-four-customs-enforcement-areas",
-    "https://sellercentral.amazon.com/seller-forums/discussions/t/2274fa46-6fda-4b1a-b469-9e4439f45ba7",
     "https://sellercentral.amazon.com/seller-forums/discussions/t/1993b9e7-890d-4de6-b7f4-75c2ba845cfd",
     "https://sellercentral.amazon.com/seller-forums/discussions/t/deaf2056-f6ee-4573-92aa-6e70c16b9598",
     "https://www.cpsc.gov/Recalls/2027/Romorgniz-Recalls-Six-Drawer-Dressers-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units",
@@ -1428,12 +1432,12 @@
     "federal-register-ustr",
     "amazon-ads"
   ],
-  "lastRun": "2026-11-07T07:04:56.974Z",
+  "lastRun": "2026-11-08T07:17:07.637Z",
   "sourceStatus": [
     {
       "id": "amazon",
       "ok": true,
-      "count": 12,
+      "count": 4,
       "error": null
     },
     {
@@ -1481,7 +1485,7 @@
     {
       "id": "hmrc",
       "ok": true,
-      "count": 7,
+      "count": 8,
       "error": null
     },
     {
@@ -1523,7 +1527,7 @@
     {
       "id": "discovery-logistics",
       "ok": true,
-      "count": 0,
+      "count": 3,
       "error": null
     },
     {
